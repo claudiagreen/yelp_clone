@@ -83,8 +83,7 @@ feature 'restaurants' do
       click_link('Sign out')
       sign_up_2
       visit '/restaurants'
-      click_link 'Edit KFC'
-      expect(page).not_to have_button 'Update Restaurant'
+      expect(page).not_to have_button 'Edit KFC'
     end
   end
 
@@ -104,8 +103,7 @@ feature 'restaurants' do
       click_link('Sign out')
       sign_up_2
       visit '/restaurants'
-      click_link 'Delete KFC'
-      expect(page).not_to have_content 'Restaurant deleted successfully'
+      expect(page).not_to have_content 'Delete KFC'
     end
   end
 end
