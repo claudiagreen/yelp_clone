@@ -15,7 +15,8 @@ feature 'restaurants' do
 
   context 'restaurants have been added' do
     before do
-      Restaurant.create(name: 'KFC')
+      # Restaurant.create(name: 'KFC')
+      create_restaurant('KFC')
     end
     scenario 'display restaurants' do
       visit '/restaurants'
@@ -29,8 +30,6 @@ feature 'restaurants' do
       # sign_in_1
       create_restaurant('KFC')
       expect(page).to have_content 'KFC'
-      p User.first
-      p Restaurant.first
       expect(Restaurant.first.user.email).to eq 'test@example.com'
       expect(current_path).to eq '/restaurants'
     end
